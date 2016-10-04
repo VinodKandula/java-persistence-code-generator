@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="#namespace#">
+	
+	<resultMap id="#TableSingular#ResultMap" type="#TableSingular#">
+	  #columnToPropertyMappings#
+	</resultMap>
+
+	<select id="select#TablePlural#" resultMap="#TableSingular#ResultMap">
+	  select #commaSeparatedColumnList#
+	  from #TableName# 
+	</select>
+		
+	<select id="select#TableSingular#" resultMap="#TableSingular#ResultMap">
+	  select #commaSeparatedColumnList#
+	  from #TableName#
+	  #where_by_pk#
+	</select>
+		
+	<insert id="insert#TableSingular#" parameterType="#TableSingular#">
+	   insert into #TableName# (#commaSeparatedColumnList#)
+	   values (#commaSeparatedValueList#)
+	</insert>
+		
+	<update id="update#TableSingular#" parameterType="#TableSingular#">
+	  update #TableName# set
+	    #update_columns_list#
+	   #where_by_pk#
+	</update>
+		
+	<delete id="delete#TableSingular#">
+	  delete from #TableName# #where_by_pk#
+	</delete>
+	
+</mapper>
+

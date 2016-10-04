@@ -1,0 +1,13 @@
+package #mapper_package#;
+
+import java.util.List;
+
+import #ClassFQN#;
+
+public interface #TableSingular#Mapper { 
+	 public List<#TableSingular#> select#TablePlural#(); 
+	 public #TableSingular# select#TableSingular#(#where_args#); 
+	 public void insert#TableSingular#(#TableSingular# #instanceVar#); 
+	 public void update#TableSingular#(#TableSingular# #instanceVar#); 
+	 public void delete#TableSingular#(#where_args#); 
+}

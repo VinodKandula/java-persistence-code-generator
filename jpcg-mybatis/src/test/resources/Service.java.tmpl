@@ -1,0 +1,46 @@
+package #service_package#;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import #ClassFQN#;
+import #mapper_package#.#TableSingular#Mapper;
+
+@Service
+@Transactional
+public class #TableSingular#Service 
+{ 
+	@Autowired
+	private #TableSingular#Mapper #instanceVar#Mapper;
+	
+	public List<#TableSingular#> getAll#TablePlural#()
+	{
+		return #instanceVar#Mapper.select#TablePlural#();
+	}
+	
+	public #TableSingular# get#TableSingular#(#where_args#)
+	{
+		return #instanceVar#Mapper.select#TableSingular#(#pk_args#);
+	}
+	
+	public #TableSingular# create#TableSingular#(#TableSingular# #instanceVar#)
+	{
+		#instanceVar#Mapper.insert#TableSingular#(#instanceVar#);
+		return #instanceVar#;
+	}
+	
+	public #TableSingular# update#TableSingular#(#TableSingular# #instanceVar#)
+	{
+		#instanceVar#Mapper.update#TableSingular#(#instanceVar#);
+		return #instanceVar#;
+	}
+	
+	public void delete#TableSingular#(#where_args#)
+	{
+		#instanceVar#Mapper.delete#TableSingular#(#pk_args#); 
+	}
+	
+}
