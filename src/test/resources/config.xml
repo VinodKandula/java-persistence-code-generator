@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- Mandatory -->
+	<jdbcConfig driver="com.mysql.jdbc.Driver" 
+				url="jdbc:mysql://localhost:3306/test" 
+				username="root" 
+				password="admin"/>
+	
+	<!-- Optional -->
+	<generateForAllTables>true</generateForAllTables>
+	
+	<!-- Optional, but recommended -->
+	<tablesConfig>
+		
+		
+		<!-- If singular/plural ClassNames are not configured,
+			 then singular/plural ClassNames for sl_address would be SlAddress, SlAddresss-->
+		<!-- 
+			<table name="sl_address" singularClassName="Address" pluralClassName="Addresses"/>
+			<table name="sl_blogs" singularClassName="Blog" pluralClassName="Blogs"/>
+		 -->
+	</tablesConfig>
+	
+	<!-- Optional, defaults to generatedSources -->	
+	<targetDir>generatedSources</targetDir>
+	
+	<!-- Optional, defaults to com.mycompany.proj -->
+	<javaBasePackage>in.sivalabs.myapp</javaBasePackage>
+	
+</configuration>
